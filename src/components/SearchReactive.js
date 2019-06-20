@@ -42,6 +42,11 @@ const reactiveSearchSettings = {
     pagination: true,
     renderItem: data => ( <div key={data._id}>{data.brand} - {data.model}</div> ),
     react: { and: ['searchbox', 'ratingsfilter'] },
+    sortOptions: [
+      { dataField: "_score", sortBy: "desc", label: "Best Match" },
+      { dataField: "price", sortBy: "asc", label: "Price (Low to High)" },
+      { dataField: "price", sortBy: "desc", label: "Price (High to Low)" }
+    ],
     innerClass: {
       resultStats: 'result-stats',
       list: 'list',
