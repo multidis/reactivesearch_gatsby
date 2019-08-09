@@ -40,7 +40,12 @@ const reactiveSearchSettings = {
     from: 0,
     size: 6,
     pagination: true,
-    renderItem: data => ( <div key={data._id}>{data.brand} - {data.model}</div> ),
+    renderItem: data => {
+      console.log('Render item');
+      return (
+        <div key={data._id}>Item: {data.brand} - {data.model}</div>
+      );
+    },
     react: { and: ['searchbox', 'ratingsfilter'] },
     innerClass: {
       resultStats: 'result-stats',
